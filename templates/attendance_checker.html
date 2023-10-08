@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Social Media Profile Detection</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        /* Add custom styles here */
+
+        body {
+            background-image: url("{% static 'bg_image.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .jumbotron {
+            background-color: transparent;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            color: aliceblue;
+            z-index: 1;
+            text-align: left;
+        }
+
+        .btn {
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-danger:hover {
+            transform: scale(1.05);
+        }
+
+        /* Stylish Form Styles */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        .form-container label,
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand ml-3" href="{% url 'homepage' %}">Student Portal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="{% url 'facial_scan' %}" target="_blank">Submit Attendance</a> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'courses' %}" target="_blank">Access Courses</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Jumbotron Section -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Student Portal</h1>
+            <p class="lead">Hello students, you can check in by giving your attendance here through facial recognition</p>
+        </div>
+    </div>
+
+    <!-- Users Section -->
+    <div id="users" class="container mt-5">
+        <h2 style="color: blue;">Users:</h2>
+        <p style="color: black;">This is a portal for the students of CBIT to check their attendance and access courses</p>
+    </div>
+
+    <!-- Stylish Form Section -->
+    <div class="form-container">
+        <form>
+            <label for="email">Email:</label>
+            <input type="text" name="Email" id="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
